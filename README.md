@@ -3,13 +3,13 @@ For this project I was inspired by the paper [ClimateLearn - Benchmarking Machin
 
 ## Usage
 The code has been tested with the following dependencies:
-* [**Python 3.8+**](https://www.python.org/)
-* Torch - version 
-* [Numpy](https://scipy.org/install.html) - version 
-* [Pytorch Image Models (timm)](https://timm.fast.ai/) - version 
-* [NetCDF4](https://unidata.github.io/netcdf4-python/) - version 
-* [Scikit-Learn](https://scikit-learn.org/stable/install.html) - version
-* [Matplotlib](https://matplotlib.org/stable/users/installing/index.html#installation) - version 
+* [**Python 3.10.2+**](https://www.python.org/)
+* Torch - version 2.1.1
+* [Numpy](https://scipy.org/install.html) - version 1.26.1
+* [Pytorch Image Models (timm)](https://timm.fast.ai/) - version 0.9.2
+* [NetCDF4](https://unidata.github.io/netcdf4-python/) - version 1.6.5
+* [Scikit-Learn](https://scikit-learn.org/stable/install.html) - version 1.3.2
+* [Matplotlib](https://matplotlib.org/stable/users/installing/index.html#installation) - version 3.8.2
 * argparse - version
 
 ### Installing Packages
