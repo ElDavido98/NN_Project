@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from utils import PeriodicPadding2D, ResidualBlock, extractor
+from ..Utils.utils import PeriodicPadding2D, ResidualBlock, extractor
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
