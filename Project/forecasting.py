@@ -1,8 +1,8 @@
 import torch.nn as nn
 import torch
-from data_processing import *
-from metrics import latitude_weighting_function
-from utils import latitude_coordinates, define_times, printProgressBar
+from .Utils.data_processing import *
+from .Utils.metrics import latitude_weighting_function
+from .Utils.utils import latitude_coordinates, define_times, printProgressBar
 from .Models.network import Network
 from .Models.ResNet import ResNet
 from .Models.UNet import UNet
