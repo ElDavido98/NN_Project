@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from timm.layers import PatchEmbed, DropPath
 from timm.models.vision_transformer import Block
-from utils import extractor, return_to_image
+from ..Utils.utils import extractor, return_to_image
 import numpy as np
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
