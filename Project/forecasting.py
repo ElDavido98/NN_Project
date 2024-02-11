@@ -3,10 +3,10 @@ import torch
 from data_processing import *
 from metrics import latitude_weighting_function
 from utils import latitude_coordinates, define_times, printProgressBar
-from network import Network
-from ResNet import ResNet
-from UNet import UNet
-from ViT import ViT
+from .Models.network import Network
+from .Models.ResNet import ResNet
+from .Models.UNet import UNet
+from .Models.ViT import ViT
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
