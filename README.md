@@ -10,7 +10,7 @@ The code has been tested with the following dependencies:
 * [NetCDF4](https://unidata.github.io/netcdf4-python/) - version 1.6.5
 * [Scikit-Learn](https://scikit-learn.org/stable/install.html) - version 1.3.2
 * [Matplotlib](https://matplotlib.org/stable/users/installing/index.html#installation) - version 3.8.2
-* [argparse](https://docs.python.org/3.11/library/argparse.html)
+* [Argparse](https://docs.python.org/3.11/library/argparse.html)
 
 ### Installing Packages
 ```
