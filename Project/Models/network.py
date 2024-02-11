@@ -1,6 +1,6 @@
 import torch
 import torch.optim as optim
-from metrics import loss_function
+from ..Utils.metrics import loss_function
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
