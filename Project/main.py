@@ -1,7 +1,7 @@
 import argparse
 import torch
 from utils import latitude_coordinates, define_times, create_list, plot
-from forecasting import Forecasting
+from .forecasting import Forecasting
 from data_processing import *
 from metrics import latitude_weighting_function, compute_eval
 
