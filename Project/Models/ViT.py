@@ -94,34 +94,3 @@ class ViT(nn.Module):
                     pos_embed[i, k, 2 * i + 1] = np.cos(k / denominator)
 
         return pos_embed
-
-
-class ViTBlock(nn.Module):
-    def __init__(self, embedding_dim, num_heads, mlp_ratio, dropout_rate, drop_path_rate, qkv_bias=False):
-        super(ViTBlock, self).__init__()
-        self.norm1 = nn.LayerNorm(embedding_dim).to(device)
-        self.mha = nn.MultiheadAttention(embed_dim=embedding_dim, num_heads=num_heads, dropout=dropout_rate).to(device)
-        if drop_path_rate > 0:
-            self.drop_path1 = DropPath(drop_path_rate)
-        else:
-            self.drop_path1 = nn.Identity().to(device)
-
-        self.norm2 = nn.LayerNorm(embedding_dim).to(device)
-        self.mlp = nn.Sequential(
-            nn.Linear(embedding_dim, int(embedding_dim * mlp_ratio)).to(device),
-            nn.LeakyReLU().to(device),
-            nn.Dropout(dropout_rate).to(device),
-            nn.Linear(int(embedding_dim * mlp_ratio), embedding_dim).to(device),
-            nn.LeakyReLU().to(device),
-            nn.Dropout(dropout_rate).to(device)
-        ).to(device)
-        if drop_path_rate > 0:
-            self.drop_path2 = DropPath(drop_path_rate)
-        else:
-            self.drop_path2 = nn.Identity().to(device)
-
-    def forward(self, x, attn_mask=None, key_padding_mask=None):
-        x = x + self.drop_path1(self.mha(self.norm1(x)))
-        x = x + self.drop_path2(self.mlp(self.norm2(x)))
-
-        return x
