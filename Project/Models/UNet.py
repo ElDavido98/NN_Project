@@ -56,6 +56,7 @@ class UNet(nn.Module):
         self.up_blocks = nn.ModuleList(self.up_blocks).to(device)
 
         self.norm = nn.BatchNorm2d(self.hidden_channels).to(device)
+        self.leaky_relu = nn.LeakyReLU(0.3).to(device)
         self.out = nn.Conv2d(in_channels, self.out_channels, kernel_size=7, padding=0).to(device)
 
     def __call__(self, data, low_year, max_year, lead_time, time):
@@ -95,7 +96,7 @@ class UNet(nn.Module):
                 x = up_block(x)
 
         x = self.periodic_zeros_padding(x)
-        x = self.out(torch.permute(x, (1, 0, 2, 3)).to(device))
+        x = self.out(self.leaky_relu(self.norm(torch.permute(x, (1, 0, 2, 3)))).to(device))
         x = x.cpu()
         return x.detach().numpy()
 
