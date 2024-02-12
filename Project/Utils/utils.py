@@ -124,20 +124,6 @@ def define_times(low_year, max_year, low_hour, max_hour, lead_times: list):
     return times
 
 
-"""def save_set(dataset, name: str):
-    for i in range(len(dataset)):
-        # Constants
-        if i < 3:
-            np.save(f"datasets/{name}/train_set_{i}.npy", dataset[i])
-        # Singles
-        if 2 < i < 7:
-            for j in range(len(dataset[i])):
-                np.save(f"datasets/{name}/train_set_{i}_{j}.npy", dataset[i][j].filled())
-        if 6 < i < 13:
-            for j in range(len(dataset[i])):
-                np.save(f"datasets/{name}/train_set_{i}_{j}.npy", dataset[i][j])"""
-
-
 def plot(name, resnet_rmse, resnet_acc, unet_rmse, unet_acc, vit_rmse, vit_acc):
     lead_time = [6, 24, 72, 120, 240]
 
