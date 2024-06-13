@@ -2,7 +2,7 @@
 For this project I was inspired by the paper [ClimateLearn - Benchmarking Machine Learning for Weather and Climate Modeling](https://arxiv.org/pdf/2307.01909.pdf#:~:text=ClimateLearn%20supports%20data%20pre%2D%20processing,weather%20forecasting%2C%20downscaling%2C%20and%20climate). I reimplemented the models used for forecasting; as networks, I have implemented: ResNet, UNet and ViT. After training, I used Root Mean Square Error (RMSE) and Anomaly Correlation Coefficient (ACC) to evaluate the performances of the trained networks.
 
 ## Usage
-Running the code is very simple: for the colab notebook you have to run all the cells in sequence, while for the files here on github you have to download the 'Project' folder and run the file 'train.py' if you want to train the model or 'evaluate.py' if you want to evaluate it. I have also added a trained model so that you can test the 'evaluate.py' function.
+Running the code is very simple: for the colab notebook you have to run all the cells in sequence, while for the files here on github you have to download the 'Project' folder and run the file 'train.py' if you want to train the model or 'evaluate.py' if you want to evaluate it. I have also added a trained model called 'model.pt' so that you can test the 'evaluate.py' function.
 
 The code has been trained and tested with the following dependencies:
 * [**Python 3.10.2+**](https://www.python.org/)
@@ -15,6 +15,7 @@ The code has been trained and tested with the following dependencies:
 * [Matplotlib](https://matplotlib.org/stable/users/installing/index.html#installation) - version 3.8.4
 
 Since it is not possible to upload the data used for the experiment to github, I created an additional file for downloading. This file, called 'download.py', downloads the files to the directory defined by 'root_directory', so it may be necessary to change this directory to ensure that the data is saved correctly. The same change must be made in 'Project/Utils/utils' for the variable 'path', which is used to access the data.
+
 If it were decided to train the models using more data than I do, it would be sufficient to make a few changes in the 'utils' file in 'Project/Utils/'. By modifying 'low_bound_year_train', 'max_bound_year_train', 'low_bound_year_val_test' and 'max_bound_year_val_test', it is possible to change the intervals used to define the years used to define the train, validation and test set.
 
 ### Installing Packages
