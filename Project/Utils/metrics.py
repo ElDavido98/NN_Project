@@ -15,22 +15,21 @@ def latitude_weighting_function(latitude_coordinates):
 
 
 def loss_function(prediction, target, latitude_weights):                            # LW_MSE
-    error = latitude_weights * np.square(prediction - target)
-    result = error.mean([0, 2, 3]).mean(0)
-
+    error = latitude_weights * torch.square(prediction - target)
+    result = torch.mean(torch.mean(error, dim=[0, 2, 3]), dim=0)
     return result
 
 
 def LW_RMSE(prediction, target, latitude_weights):
     diff = [x - y for x, y in zip(prediction, target)]
-    error = latitude_weights * np.square(diff)      # 32 elements * 1x1x32x64 elements
-    channel_rmse = error.mean([2, 3]).sqrt().mean(0)
-    result = channel_rmse.mean(1)
+    error = latitude_weights * np.square(diff)#.mean(0)      # (1, 1, 3, 12) * (128, 3, 32, 64) -> N, 128, 3, 32, 64
+    channel_rmse = error.mean([3, 4]).sqrt().mean(1)        # 2, 3
+    result = channel_rmse.mean(0)       # 3
     return result.cpu().numpy()
 
 
-def LW_ACC(prediction, target, latitude_weights, set_climatology):
-    climatology = np.asarray(set_climatology).mean(0)
+def LW_ACC(prediction, target, latitude_weights, climatology):
+    climatology = np.asarray(climatology).mean(0)
     prediction = prediction - climatology
     target = target - climatology
     channel_acc = []
