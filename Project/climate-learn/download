@@ -1,0 +1,11 @@
+import climate_learn as cl
+
+root_directory = "Project/climate-learn_dataset"
+  
+variable = "2m_temperature"
+cl.data.download_weatherbench(
+    dst=f"{root_directory}/{variable}",
+    dataset="era5",
+    variable=variable,
+    resolution=5.625  # optional, default is 5.625
+)
