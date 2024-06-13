@@ -9,7 +9,7 @@ from metrics import loss_function
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-path = "Project/climate-learn_set"
+path = "Project/climate-learn_dataset"
 
 single_folder = ["toa_incident_solar_radiation_5.625deg", "2m_temperature_5.625deg", "10m_u_component_of_wind_5.625deg",
                  "10m_v_component_of_wind_5.625deg"]
