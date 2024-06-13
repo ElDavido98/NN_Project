@@ -72,7 +72,7 @@ def plot(name, linreg_baseline_rmse, linreg_baseline_acc, resnet_rmse, resnet_ac
     # Create the figure and subplots
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
     # Plot RMSE on the first subplot
-    ax1.plot(lead_time, linreg_baseline_rmse, 'o-', label='Linear Regression RMSE')
+    ax1.plot(lead_time, linreg_baseline_rmse, 'o-', label='Baseline RMSE')
     ax1.plot(lead_time, resnet_rmse, 'o-', label='ResNet RMSE')
     ax1.plot(lead_time, unet_rmse, 'o-', label='UNet RMSE')
     ax1.plot(lead_time, vit_rmse, 'o-', label='ViT RMSE')
@@ -83,7 +83,7 @@ def plot(name, linreg_baseline_rmse, linreg_baseline_acc, resnet_rmse, resnet_ac
     # Add grid
     ax1.grid(True)
     # Plot ACC on the second subplot
-    ax2.plot(lead_time, linreg_baseline_acc, 'o-', label='Linear Regression ACC')
+    ax2.plot(lead_time, linreg_baseline_acc, 'o-', label='Baseline ACC')
     ax2.plot(lead_time, resnet_acc, 'o-', label='ResNet ACC')
     ax2.plot(lead_time, unet_acc, 'o-', label='UNet ACC')
     ax2.plot(lead_time, vit_acc, 'o-', label='ViT ACC')
