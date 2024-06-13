@@ -119,7 +119,7 @@ def define_sets(task, val=0, test=0):              # Loads .nc files and turns t
                 if 2 < i < 7:
                     nc = netCDF4.Dataset(f"{path}/{single_folder[i - 3]}/{single_variable[i - 3]}{year}{resolution}.nc")
                     data = nc[abbr[i]]
-                    data_np = data[0:4380]
+                    data_np = data[:]
                     # Remove the last 24 hours if this year has 366 days
                     if data_np.shape[0] == 8784:
                         data_np = data_np[:8760]
