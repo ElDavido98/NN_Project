@@ -4,12 +4,12 @@ For this project I was inspired by the paper [ClimateLearn - Benchmarking Machin
 ## Usage
 The code has been tested with the following dependencies:
 * [**Python 3.10.2+**](https://www.python.org/)
-* [Torch](https://pytorch.org/) - version 2.1.1
-* [Numpy](https://scipy.org/install.html) - version 1.26.1
-* [Pytorch Image Models (timm)](https://timm.fast.ai/) - version 0.9.2
+* [Torch](https://pytorch.org/) - version 2.2.0
+* [Numpy](https://scipy.org/install.html) - version 1.26.4
+* [Pytorch Image Models (timm)](https://timm.fast.ai/) - version 0.9.16
 * [NetCDF4](https://unidata.github.io/netcdf4-python/) - version 1.6.5
-* [Scikit-Learn](https://scikit-learn.org/stable/install.html) - version 1.3.2
-* [Matplotlib](https://matplotlib.org/stable/users/installing/index.html#installation) - version 3.8.2
+* [Scikit-Learn](https://scikit-learn.org/stable/install.html) - version 1.4.2
+* [Matplotlib](https://matplotlib.org/stable/users/installing/index.html#installation) - version 3.8.4
 
 ### Installing Packages
 ```
