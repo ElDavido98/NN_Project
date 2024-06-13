@@ -14,6 +14,8 @@ The code has been trained and tested with the following dependencies:
 * [Scikit-Learn](https://scikit-learn.org/stable/install.html) - version 1.4.2
 * [Matplotlib](https://matplotlib.org/stable/users/installing/index.html#installation) - version 3.8.4
 
+Since it is not possible to upload the data used for the experiment to github, I created an additional file for downloading. This file, called 'download.py', downloads the files to the directory defined by 'root_directory', so it may be necessary to change this directory to ensure that the data is saved correctly. The same change must be made in 'Project/Utils/utils' for the variable 'path', which is used to access the data.
+
 ### Installing Packages
 ```
 pip install climate-learn
