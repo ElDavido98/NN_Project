@@ -1,3 +1,5 @@
+import netCDF4
+import sklearn.preprocessing
 from utils import *
 
 
@@ -93,11 +95,11 @@ def define_sets(task, val=0, test=0):              # Loads .nc files and turns t
             for j in range(8760):
                 tr_list = []
                 tr_list.append(train_tisr[i][j]), tr_list.append(train_t2m[i][j]), \
-                tr_list.append(train_u10[i][j]), tr_list.append(train_v10[i][j])
+                    tr_list.append(train_u10[i][j]), tr_list.append(train_v10[i][j])
                 for lev in range(len(levels)):
                     tr_list.append(train_z[i][lev][j]), tr_list.append(train_u[i][lev][j]), \
-                    tr_list.append(train_v[i][lev][j]), tr_list.append(train_t[i][lev][j]), \
-                    tr_list.append(train_q[i][lev][j]), tr_list.append(train_r[i][lev][j])
+                        tr_list.append(train_v[i][lev][j]), tr_list.append(train_t[i][lev][j]), \
+                        tr_list.append(train_q[i][lev][j]), tr_list.append(train_r[i][lev][j])
                 train_list.append(np.array(tr_list))
         train_set = train_list
         return train_set
@@ -122,25 +124,25 @@ def define_sets(task, val=0, test=0):              # Loads .nc files and turns t
                     if data_np.shape[0] == 8784:
                         data_np = data_np[:8760]
                 if i == 3:
-                  if val:
-                    val_tisr.append(data_np[0:4380])
-                  if test:
-                    test_tisr.append(data_np[4380:8760])
+                    if val:
+                        val_tisr.append(data_np[0:4380])
+                    if test:
+                        test_tisr.append(data_np[4380:8760])
                 if i == 4:
-                  if val:
-                    val_t2m.append(data_np[0:4380])
-                  if test:
-                    test_t2m.append(data_np[4380:8760])
+                    if val:
+                        val_t2m.append(data_np[0:4380])
+                    if test:
+                        test_t2m.append(data_np[4380:8760])
                 if i == 5:
-                  if val:
-                    val_u10.append(data_np[0:4380])
-                  if test:
-                    test_u10.append(data_np[4380:8760])
+                    if val:
+                        val_u10.append(data_np[0:4380])
+                    if test:
+                        test_u10.append(data_np[4380:8760])
                 if i == 6:
-                  if val:
-                    val_v10.append(data_np[0:4380])
-                  if test:
-                    test_v10.append(data_np[4380:8760])
+                    if val:
+                        val_v10.append(data_np[0:4380])
+                    if test:
+                        test_v10.append(data_np[4380:8760])
 
                 level_val, level_test = [], []
                 if 6 < i < 13:
@@ -153,40 +155,40 @@ def define_sets(task, val=0, test=0):              # Loads .nc files and turns t
                         data_np = data_np[:8760]
                     level_val, level_test = [], []
                     for lev in lev_indexes:
-                      if val:
-                        level_val.append(data_np[0:4380, lev])
-                      if test:
-                        level_test.append(data_np[4380:8760, lev])
+                        if val:
+                            level_val.append(data_np[0:4380, lev])
+                        if test:
+                            level_test.append(data_np[4380:8760, lev])
                 if i == 7:
-                  if val:
-                    val_z.append(level_val)
-                  if test:
-                    test_z.append(level_test)
+                    if val:
+                        val_z.append(level_val)
+                    if test:
+                        test_z.append(level_test)
                 if i == 8:
-                  if val:
-                    val_u.append(level_val)
-                  if test:
-                    test_u.append(level_test)
+                    if val:
+                        val_u.append(level_val)
+                    if test:
+                        test_u.append(level_test)
                 if i == 9:
-                  if val:
-                    val_v.append(level_val)
-                  if test:
-                    test_v.append(level_test)
+                    if val:
+                        val_v.append(level_val)
+                    if test:
+                        test_v.append(level_test)
                 if i == 10:
-                  if val:
-                    val_t.append(level_val)
-                  if test:
-                    test_t.append(level_test)
+                    if val:
+                        val_t.append(level_val)
+                    if test:
+                        test_t.append(level_test)
                 if i == 11:
-                  if val:
-                    val_q.append(level_val)
-                  if test:
-                    test_q.append(level_test)
+                    if val:
+                        val_q.append(level_val)
+                    if test:
+                        test_q.append(level_test)
                 if i == 12:
-                  if val:
-                    val_r.append(level_val)
-                  if test:
-                    test_r.append(level_test)
+                    if val:
+                        val_r.append(level_val)
+                    if test:
+                        test_r.append(level_test)
             j += 1
             printProgressBar(j, l, prefix='Progress:', suffix='Complete', length=50)
         validation_list, test_list = [], []
@@ -194,20 +196,20 @@ def define_sets(task, val=0, test=0):              # Loads .nc files and turns t
             for j in range(4380):
                 val_list, tst_list = [], []
                 if val:
-                  val_list.append(val_tisr[i][j]), val_list.append(val_t2m[i][j]), \
-                  val_list.append(val_u10[i][j]), val_list.append(val_v10[i][j])
+                    val_list.append(val_tisr[i][j]), val_list.append(val_t2m[i][j]), \
+                        val_list.append(val_u10[i][j]), val_list.append(val_v10[i][j])
                 if test:
-                  tst_list.append(test_tisr[i][j]), tst_list.append(test_t2m[i][j]), \
-                  tst_list.append(test_u10[i][j]), tst_list.append(test_v10[i][j])
+                    tst_list.append(test_tisr[i][j]), tst_list.append(test_t2m[i][j]), \
+                        tst_list.append(test_u10[i][j]), tst_list.append(test_v10[i][j])
                 for lev in range(len(levels)):
                     if val:
-                      val_list.append(val_z[i][lev][j]), val_list.append(val_u[i][lev][j]), \
-                      val_list.append(val_v[i][lev][j]), val_list.append(val_t[i][lev][j]), \
-                      val_list.append(val_q[i][lev][j]), val_list.append(val_r[i][lev][j])
+                        val_list.append(val_z[i][lev][j]), val_list.append(val_u[i][lev][j]), \
+                            val_list.append(val_v[i][lev][j]), val_list.append(val_t[i][lev][j]), \
+                            val_list.append(val_q[i][lev][j]), val_list.append(val_r[i][lev][j])
                     if test:
-                      tst_list.append(test_z[i][lev][j]), tst_list.append(test_u[i][lev][j]), \
-                      tst_list.append(test_v[i][lev][j]), tst_list.append(test_t[i][lev][j]), \
-                      tst_list.append(test_q[i][lev][j]), tst_list.append(test_r[i][lev][j])
+                        tst_list.append(test_z[i][lev][j]), tst_list.append(test_u[i][lev][j]), \
+                            tst_list.append(test_v[i][lev][j]), tst_list.append(test_t[i][lev][j]), \
+                            tst_list.append(test_q[i][lev][j]), tst_list.append(test_r[i][lev][j])
                 if val:
                     validation_list.append(np.array(val_list))
                 if test:
