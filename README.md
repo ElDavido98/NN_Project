@@ -6,7 +6,7 @@ Running the code is very simple: for the colab notebook you have to run all the 
 
 The code has been trained and tested with the following dependencies:
 * [**Python 3.10.2+**](https://www.python.org/)
-* [climate-learne](https://climatelearn.readthedocs.io/en/latest/index.html)
+* [climate-learn](https://climatelearn.readthedocs.io/en/latest/index.html)
 * [Torch](https://pytorch.org/) - version 2.2.0
 * [Numpy](https://scipy.org/install.html) - version 1.26.4
 * [Pytorch Image Models (timm)](https://timm.fast.ai/) - version 0.9.16
