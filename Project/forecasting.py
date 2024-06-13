@@ -1,11 +1,11 @@
-from network import Network
-from baselines import *
-from ResNet import ResNet
-from UNet import UNet
-from ViT import ViT
-from data_processing import *
-from utils import *
-from metrics import *
+from .Models.network import Network
+from .Models.baselines import *
+from .Models.ResNet import ResNet
+from .Models.UNet import UNet
+from .Models.ViT import ViT
+from .utils.data_processing import *
+from .utils.utils import *
+from .utils.metrics import *
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
