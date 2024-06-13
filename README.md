@@ -10,15 +10,13 @@ The code has been tested with the following dependencies:
 * [NetCDF4](https://unidata.github.io/netcdf4-python/) - version 1.6.5
 * [Scikit-Learn](https://scikit-learn.org/stable/install.html) - version 1.3.2
 * [Matplotlib](https://matplotlib.org/stable/users/installing/index.html#installation) - version 3.8.2
-* [Argparse](https://docs.python.org/3.11/library/argparse.html)
 
 ### Installing Packages
 ```
-pip install torch
-pip install numpy 
-pip install timm
-pip install netCDF4
-pip install scikit-learn
-pip install matplotlib
-pip install argparse
+pip install torch==2.2.0
+pip install numpy==1.26.4
+pip install timm==0.9.16
+pip install netCDF4==1.6.5
+pip install scikit-learn==1.4.2
+pip install matplotlib==3.8.4
 ```
