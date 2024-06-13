@@ -33,11 +33,11 @@ lev_indexes = [0, 4, 7, 8, 9, 10, 11]
 low_bound_year_train, max_bound_year_train = 1980, 1983
 low_bound_year_val_test, max_bound_year_val_test = 1986, 1987   # First part for validation, second part for test
 
-low_year_train, max_year_train = 0, 2
+low_year_train, max_year_train = 0, (max_bound_year_train - low_bound_year_train - 1)
 low_hour_train, max_hour_train = 0, 8759
-low_year_val, max_year_val = 0, 0
+low_year_val, max_year_val = 0, (max_bound_year_val_test - low_bound_year_val_test - 1)
 low_hour_val, max_hour_val = 0, 4379
-low_year_test, max_year_test = 0, 0
+low_year_test, max_year_test = 0, (max_bound_year_val_test - low_bound_year_val_test - 1)
 low_hour_test, max_hour_test = 0, 4379
 
 latitude_coordinates = [-87.1875, -81.5625, -75.9375, -70.3125, -64.6875, -59.0625, -53.4375, -47.8125, -42.1875,
